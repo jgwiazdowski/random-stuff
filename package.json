@@ -1,0 +1,16 @@
+{
+  "name": "random-stuff",
+  "version": "1.0.0",
+  "description": "Simple GraphQL Server with Random Stuff in it :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "index.js"
+  },
+  "author": "Jakub Gwiazdowski",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
