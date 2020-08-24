@@ -22,10 +22,13 @@ const data = {
     email: "john@example.com",
     pets: ["Mittens", "Doggo", "Birb"]
 }
-
+console.log(process.env);
 const server = new ApolloServer({
     typeDefs,
-    rootValue: data
+    rootValue: data,
+    playground: true,
+    introspection: true
+
 });
 
 
