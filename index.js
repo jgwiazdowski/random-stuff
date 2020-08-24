@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
-const port = 4000 | process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 const typeDefs = gql`
     type Query {
@@ -32,7 +32,7 @@ const server = new ApolloServer({
 
 
 server.listen({
-    port
+    port: PORT
 }).then( result => {
     console.log('Server is running at ' + result.url);
 }).catch( err => {
