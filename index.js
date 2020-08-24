@@ -6,7 +6,7 @@ const typeDefs = gql`
         interestingUrls: [String],
         firstName: String
         email: String
-        perts: [String]
+        pets: [String]
     } 
 `
 
