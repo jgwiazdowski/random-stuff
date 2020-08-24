@@ -1,20 +1,32 @@
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, gql } = require('apollo-server');
 
-const typeDefs = `
+const typeDefs = gql`
     type Query {
-        greetings: String
+        greeting: String,
+        interestingUrls: [String]
     } 
 `
 
+const data = {
+    greeting: "Hello World",
+    interestingUrls: [
+        'https://github.com',
+        'https://ea.com',
+    ]
+}
+
 const server = new ApolloServer({
-    typeDefs
+    typeDefs,
+    rootValue: data
 });
+
+
+
 
 server.listen({
     port: 4000
-}).then( (result) => {
+}).then( result => {
     console.log('Server is running at ' + result.url);
-
-}).catch( () => {
+}).catch( err => {
     console.log('Server failed to run!');
 })
