@@ -3,7 +3,10 @@ const { ApolloServer, gql } = require('apollo-server');
 const typeDefs = gql`
     type Query {
         greeting: String,
-        interestingUrls: [String]
+        interestingUrls: [String],
+        firstName: String
+        email: String
+        perts: [String]
     } 
 `
 
@@ -12,7 +15,11 @@ const data = {
     interestingUrls: [
         'https://github.com',
         'https://ea.com',
-    ]
+        'https://medium.com',
+    ],
+    firstName: "John",
+    email: "john@example.com",
+    pets: ["Mittens", "Doggo", "Birb"]
 }
 
 const server = new ApolloServer({
